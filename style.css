@@ -1,76 +1,71 @@
 body {
     margin: 0;
-    padding: 20px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
     min-height: 100vh;
-    background-color: #f0f2f5; 
-    font-family: 'Segoe UI', Roboto, sans-serif;
-}
-
-.card {
-    background-color: #ffffff; 
-    width: 100%;
-    max-width: 350px;
-    min-height: 400px; 
-    padding: 30px;
-    border-radius: 20px;
-    box-shadow: 0 15px 35px rgba(0,0,0,0.1);
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    box-sizing: border-box;
-}
-
-.avatar {
-    width: 80px;
-    height: 80px;
-    background-color: #24292e; 
-    color: white;
-    border-radius: 50%;
     display: flex;
     justify-content: center;
     align-items: center;
-    font-size: 28px;
-    font-weight: bold;
-    margin-bottom: 15px;
+    background-color: #f0f2f5;
+    gap: 20px; 
 }
 
-.user-name {
-    margin: 0 0 20px 0;
-    font-size: 24px;
-    color: #1a1a1a;
+.container {
+    display: flex;
+    gap: 20px;
 }
 
-.info {
-    width: 100%;
-    text-align: left;
-}
-
-.info p {
-    margin: 12px 0;
-    font-size: 15px;
-    line-height: 1.6;
-    color: #444;
-}
 
 .btn {
-    margin-top: auto;
-    width: 100%;
-    padding: 12px;
-    background-color: #2ea44f; 
+    position: relative; 
     color: white;
-    text-decoration: none;     
-    text-align: center;       
-    border-radius: 10px;
-    font-size: 16px;
-    font-weight: 600;
+    padding: 12px 24px;
+    font-size: 18px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
     transition: 0.3s;
-    box-sizing: border-box;   
 }
 
-.btn:hover {
-    background-color: #2c974b;
-    box-shadow: 0 5px 15px rgba(46, 164, 79, 0.3);
+
+.tooltip {
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    transform: translateX(-50%) translateY(10px); 
+    
+    background-color: #2c3e50;
+    color: #fff;
+    padding: 8px 14px;
+    border-radius: 6px;
+    font-size: 14px;
+    white-space: nowrap;
+    z-index: 10;
+
+    
+    opacity: 0;            
+    visibility: hidden;    
+    transition: opacity 0.3s ease, transform 0.3s ease; 
 }
+
+
+.tooltip::before {
+    content: "";           
+    position: absolute;
+    bottom: 100%;      
+    left: 50%;
+    transform: translateX(-50%);
+        border-width: 6px;
+    border-style: solid;
+    border-color: transparent transparent #2c3e50 transparent; 
+}
+
+
+.btn:hover .tooltip {
+    opacity: 1;      
+    visibility: visible;  
+    transform: translateX(-50%) translateY(5px); 
+}
+
+
+.info { background-color: #17a2b8; }
+.buy { background-color: #28a745; }
+.sale { background-color: #dc3545; }

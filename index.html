@@ -2,29 +2,27 @@
 <html lang="ru">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Визитка Михаила</title>
+    <title>Всплывающая подсказка</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
+    <div class="container">
+        
+        <button class="btn info">
+            Информация
+            <span class="tooltip">Подробнее</span>
+        </button>
 
-    <div class="card">
-        
-        <div class="avatar">МБ</div>
+        <button class="btn buy">
+            Товар
+            <span class="tooltip">В корзину</span>
+        </button>
 
-       
-        <h2 class="user-name">Михаил Белов</h2>
-        
-        
-        <div class="info">
-            <p><strong>Специализация:</strong> вёрстка, программирование</p>
-            <p><strong>О себе:</strong> начинающий верстальщик. Изучаю HTML и CSS, практикуюсь в создании аккуратных интерфейсов.</p>
-        </div>
-        
-       <a href="https://github.com/mikhail-dev1/css-practice" class="btn" target="_blank">
-            Открыть GitHub
-        </a>
+    
+        <button class="btn sale">
+            Акция
+            <span class="tooltip">Скидка 20%</span>
+        </button>
     </div>
-
 </body>
 </html>
